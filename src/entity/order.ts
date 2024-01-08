@@ -15,7 +15,7 @@ export default class Order {
     }
 
     total(): number {
-        return this._items.reduce((acc, item) => acc + item._price, 0);
+        return this._items.reduce((acc, item) => acc + item.ordemItemTotal(), 0);
     }
 
     get id(): string {
@@ -39,7 +39,10 @@ export default class Order {
             throw new Error("Items is are required");
         }
 
+        if (this._items.some(item => item.quantity <= 0)) {
+            throw new Error("Quantity must be greater than 0");
+        }
+
         return true;
     }
-
 }
