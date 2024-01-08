@@ -1,6 +1,6 @@
-// uma entidade SEMPRE deve ser autovalidável, garantindo que ela sempre estará em um estado válido
-
 import Address from "./address";
+
+// uma entidade SEMPRE deve ser autovalidável, garantindo que ela sempre estará em um estado válido
 
 // ORM foca em persistência de dados, não em regras de negócio
 
@@ -24,13 +24,13 @@ import Address from "./address";
          // customer.ts
             // aqui tem get e set e armazena no banco de dados
 
-class Customer {
+export default class Customer {
     _id: string;
     _name: string;
     _address!: Address;
     _active: boolean;
 
-    constructor(id: string, name: string, address: string) {
+    constructor(id: string, name: string) {
         this._id = id;
         this._name = name;
         this._active = true;
