@@ -1,5 +1,7 @@
 // uma entidade SEMPRE deve ser autovalidável, garantindo que ela sempre estará em um estado válido
 
+import Address from "./address";
+
 // ORM foca em persistência de dados, não em regras de negócio
 
 // regra de negócio fica na entidade
@@ -25,13 +27,12 @@
 class Customer {
     _id: string;
     _name: string;
-    _address: string;
+    _address!: Address;
     _active: boolean;
 
     constructor(id: string, name: string, address: string) {
         this._id = id;
         this._name = name;
-        this._address = address;
         this._active = true;
     }
 
@@ -44,7 +45,7 @@ class Customer {
             throw new Error('Invalid name');
         }
 
-        if (!this._address || this._address.length === 0) {
+        if (!this._address || this._address === undefined) {
             throw new Error('Invalid address');
         }
 
@@ -55,9 +56,8 @@ class Customer {
         this.validate();
     }
 
-    changeAddress(newAddress: string) {
-        this._address = newAddress;
-        this.validate();
+    set address(address: Address) {
+        this._address = address;
     }
 
     deactivate() {
@@ -66,7 +66,7 @@ class Customer {
     }
 
     activate() {
-        if (this._address.length === 0) {
+        if (this._address === undefined) {
             throw new Error('Address is required to activate customer');
         } 
         this._active = true;
