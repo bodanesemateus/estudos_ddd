@@ -11,7 +11,7 @@ describe("Producto service unit tests", () => {
         ProductService.increasePrice(products, 100);
 
         expect(product1.price).toEqual(200);
-        expect(product2.price).toEqual(300);
+        expect(product2.price).toEqual(400);
 
     });
 
