@@ -1,7 +1,11 @@
-import { Model } from "sequelize";
-import { Column, PrimaryKey } from "sequelize-typescript";
+import {Model, Column, PrimaryKey, Table } from "sequelize-typescript";
 
-export default class CustomderModel extends Model {
+
+@Table({
+    tableName: "customers",
+    timestamps: false,
+})
+export default class CustomerModel extends Model {
     @PrimaryKey
     @Column
     declare id: string;
@@ -10,7 +14,16 @@ export default class CustomderModel extends Model {
     declare name: string;
 
     @Column({ allowNull: false })
-    declare address: string;
+    declare street: string;
+
+    @Column({ allowNull: false })
+    declare number: number;
+
+    @Column({ allowNull: false })
+    declare zipCode: string;
+
+    @Column({ allowNull: false })
+    declare city: string;
 
     @Column({ allowNull: false })
     declare active: boolean;
