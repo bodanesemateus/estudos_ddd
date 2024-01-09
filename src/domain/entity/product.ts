@@ -28,6 +28,10 @@ export default class Product{
         return true;
     }
     
+    get id(): string {
+        return this._id;
+    }
+
     get name(): string {
         return this._name;
     }
@@ -44,6 +48,14 @@ export default class Product{
     changePrice(price: number): void {
         this._price = price;
         this.validate();
+    }
+
+    toJSON(): any {
+        return {
+            id: this._id,
+            name: this._name,
+            price: this._price,
+        };
     }
 
 }
