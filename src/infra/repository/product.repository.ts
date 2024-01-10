@@ -20,11 +20,6 @@ export default class ProductRepository implements ProductRepositoryInterface {
 
     }
 
-    async findAll(): Promise<Product[]> {
-        const products = await ProductModel.findAll();
-        return products.map((product) => new Product(product.id, product.name, product.price));
-    }
-
     async find(id: string): Promise<Product> {
         const product = await ProductModel.findOne({ where: { id } });
         if (!product) {
@@ -32,4 +27,10 @@ export default class ProductRepository implements ProductRepositoryInterface {
         }
         return new Product(product.id, product.name, product.price);
     }
+
+    async findAll(): Promise<Product[]> {
+        const products = await ProductModel.findAll();
+        return products.map((product) => new Product(product.id, product.name, product.price));
+    }
+
 }
