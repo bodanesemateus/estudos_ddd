@@ -38,6 +38,18 @@ export default class OrderItem {
         return true;
     }
 
+    get id(): string {
+        return this._id;
+    }
+
+    get name(): string {
+        return this._name;
+    }
+
+    get productId(): string {
+        return this._productId;
+    }
+
     get price(): number {
         return this._price;
     }
