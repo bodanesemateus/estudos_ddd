@@ -1,7 +1,7 @@
-import Address from "./domain/entity/address";
-import Customer from "./domain/entity/customer";
-import Order from "./domain/entity/order";
-import OrderItem from "./domain/entity/order_item";
+import Address from "./domain/customer/entity/address";
+import Customer from "./domain/customer/entity/customer";
+import Order from "./domain/order/entity/order";
+import OrderItem from "./domain/order/entity/order_item";
 
 let customer = new Customer('1', 'Mateus Bodanese');
 let address = new Address('Rua 1', 123, '12345-123', 'Cidade 1');
