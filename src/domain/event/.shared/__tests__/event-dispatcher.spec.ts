@@ -1,5 +1,6 @@
 import EventDispatcher from "../event-dispatcher";
 import SendEmailWhenProductIsCreatedEventHandler from "../../product/handler/send-email-when-product-is-created.handler";
+import SendEmailWhenCustomerIsCreatedEventHandler from "../../customer/handler/send-email-when-customer-is-created.handler";
 import ProductCreatedEvent from "../../product/product-created.event";
 
 describe("Domain events test", () => {
@@ -19,6 +20,7 @@ describe("Domain events test", () => {
         expect(
           eventDispatcher.getEventHandlers["ProductCreatedEvent"][0]
         ).toMatchObject(eventHandler);
+
       });
 
       it("should unregister an event handler", () => {
