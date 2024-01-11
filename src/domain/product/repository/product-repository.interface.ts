@@ -1,5 +1,5 @@
 import Product from "../entity/product";
-import RepositoryInterface from "../../customer/repository/repository-interface";
+import RepositoryInterface from "../../.shared/repository/repository-interface";
 
 
 // aqui criamos os metodos especificos de produtos, ou seja, se eu preciso procurar um produto

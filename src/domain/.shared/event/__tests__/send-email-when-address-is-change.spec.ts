@@ -1,6 +1,7 @@
 import EventDispatcher from "../event-dispatcher";
-import SendEmailWhenCustomerAddresIsChange from "../../customer/handler/send-email-when-address-is-change.handler";
-import CustomerCreatedEvent from "../../customer/customer-created.events";
+import SendEmailWhenCustomerAddresIsChange from "../../../customer/event/handler/send-email-when-address-is-change.handler";
+import CustomerCreatedEvent from "../../../customer/event/customer-created.events";
+
 
 describe("Send email when change address unit test", () => {
 

@@ -108,5 +108,5 @@
   },
   "include": [
     "src/**/*.ts"
-  ],
+, "src/domain/.shared/repository/repository-interface.ts"  ],
 }

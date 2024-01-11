@@ -1,4 +1,4 @@
-import Address from "./address";
+import Address from "../value-object/address";
 
 // uma entidade SEMPRE deve ser autovalidável, garantindo que ela sempre estará em um estado válido
 

@@ -5,7 +5,7 @@ import OrderItemModel from "../../../../infra/db/sequelize/model/order-item.mode
 import ProductModel from "../../../../infra/db/sequelize/model/product.model";
 import CustomerRepository from "../../../../infra/repository/customer.repository";
 import Customer from "../../../customer/entity/customer";
-import Address from "../../../customer/entity/address";
+import Address from "../../../customer/value-object/address";
 import ProductRepository from "../../../../infra/repository/product.repository";
 import Product from "../../../product/entity/product";
 import OrderItem from "../../entity/order_item";
